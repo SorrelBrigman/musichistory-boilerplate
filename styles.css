@@ -188,4 +188,6 @@ Section Two Stylings
 
 .listsong {
 	display: flex;
+	align-self: center;
 }
+.listsong[input="text"] {}
