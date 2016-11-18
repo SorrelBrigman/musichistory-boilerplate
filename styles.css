@@ -71,5 +71,29 @@ Section Two Stylings
 
 .section2 ul {
 	display: flex;
-	display: row;
+	flex-direction: row;
+	justify-content: flex-start;
+	padding-left: 0;
+
 }
+
+.section2 ul li {
+	list-style: none;
+	margin-right: 1em;
+}
+
+.section2 ul li + li {
+    border-left: 1px solid black;
+	padding-left: 1em;
+
+}
+
+.wrapper {
+	margin: 5%;
+
+}
+
+.section2 h1 {
+	color: #785616;
+}
+
