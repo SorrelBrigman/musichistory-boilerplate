@@ -22,6 +22,21 @@ header ul {
 	flex-direction: row;
 }
 
+header ul li {
+	list-style: none;
+	margin-right: .5em;
+
+}
+
+header a {
+  text-decoration: none;
+}
+
+header ul li + li {
+	border-left: 2px solid black;
+	padding-left: .5em;
+}
+
 /******************
 Section One Stylings
 ******************/
