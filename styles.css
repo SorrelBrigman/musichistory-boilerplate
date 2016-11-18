@@ -56,6 +56,55 @@ Section One Stylings
 .section1 form {
 	display: flex;
 	flex-direction: column;
+	padding: 5%;
+}
+
+label {
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+input[type="checkbox"] {
+	display: inline;
+}
+
+/******************Input Range Styles*/
+
+
+/*******************Applying Base CSS styles to input range */
+
+
+input[type="range"] {
+	-webkit-appearance: none; /*applys base css styles*/
+	width: 100%; /*applies base css styles, specific width required for firefox*/
+	background: ; /*applys base css styles, otherwise white in chrome*/
+}
+
+input[type="range"]::webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+	outline: none;
+}
+
+input[type=range]::-ms-track {
+	width: 100%;
+	cursor: pointer;
+}
+
+
+
+
+/******************Custom input range stylings*/
+
+input[type="range"] {
+
+}
+
+input[type="range"]::-ms-track {
+	width: 100%;
+	height: 10px;
 }
 
 /******************
