@@ -48,3 +48,8 @@ Section Two Stylings
   border: 2px solid black;
 
 }
+
+.section2 ul {
+	display: flex;
+	display: row;
+}
