@@ -1,0 +1,26 @@
+body {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+/******************
+Header Stylings
+******************/
+header {
+	width: 100%;
+	background-color: #ffb4b0;
+	border: 2px solid black;
+}
+
+header ul {
+	display: flex;
+	flex-direction: row;
+}
+
+/******************
+Section One Stylings
+******************/
+
+.section1
