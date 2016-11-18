@@ -64,8 +64,18 @@ label {
 	padding-top: 1em;
 }
 
-input[type="checkbox"] {
-	display: inline;
+
+
+.genre {
+	display: flex;
+	flex-direction: column;
+}
+
+.gencol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 /******************Input Range Styles*/
