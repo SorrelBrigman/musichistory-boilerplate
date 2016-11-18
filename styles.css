@@ -64,18 +64,19 @@ label {
 	padding-top: 1em;
 }
 
-
+.section1 li {
+	display: inline-block;
+}
 
 .genre {
 	display: flex;
 	flex-direction: column;
 }
 
-.gencol {
+/*.gencol {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: row;*/
+
 }
 
 /******************Input Range Styles*/
