@@ -1,0 +1,55 @@
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 20px 10%;
+}
+
+
+/******************
+Header Stylings
+******************/
+header {
+	width: 100%;
+	background-color: #ffb4b0;
+	border: 2px solid black;
+	margin-bottom: 2%;
+}
+
+header ul {
+	display: flex;
+	flex-direction: row;
+}
+
+/******************
+Section One Stylings
+******************/
+
+.section1 {
+	width: 25%;
+	background-color: #4dd7fa;
+	border: 2px solid black;
+}
+
+
+.section1 form {
+	display: flex;
+	flex-direction: column;
+}
+
+/******************
+Section Two Stylings
+******************/
+
+.section2 {
+  width: 72%;
+  background-color: #fefac0;
+  border: 2px solid black;
+
+}
+
+.section2 ul {
+	display: flex;
+	display: row;
+}
