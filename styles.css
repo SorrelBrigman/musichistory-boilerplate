@@ -23,4 +23,18 @@ header ul {
 Section One Stylings
 ******************/
 
-.section1
+.section1 {
+	width: 25%;
+	background-color: #4dd7fa;
+	border: 2px solid black;
+}
+
+
+.section1 form {
+	display: flex;
+	flex-direction: column;
+}
+
+/******************
+Section Two Stylings
+******************/
