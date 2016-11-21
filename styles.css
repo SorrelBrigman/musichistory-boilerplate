@@ -52,6 +52,12 @@ Section One Stylings
 	border: 2px solid black;
 }
 
+select {
+  height: 2em;
+  border: 1px solid black;
+
+}
+
 
 .section1 form {
 	display: flex;
@@ -182,3 +188,12 @@ Section Two Stylings
 	color: #785616;
 }
 
+
+/****************Add Music Page*/
+
+
+.listsong {
+	display: flex;
+	align-self: center;
+}
+.listsong[input="text"] {}
