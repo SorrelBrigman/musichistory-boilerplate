@@ -52,6 +52,12 @@ Section One Stylings
 	border: 2px solid black;
 }
 
+select {
+  height: 2em;
+  border: 1px solid black;
+
+}
+
 
 .section1 form {
 	display: flex;
