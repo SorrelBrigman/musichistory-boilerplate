@@ -56,7 +56,7 @@ var artist;
 
 var breakDownString = function (i) {
 
-for (var i = 0; i < edittedSongs.length; i++) {
+if (i < edittedSongs.length) {
 	//cycle through each part of the stringsongList[i] = new songNumber;
 		//song title
 			//everything before the word "by"
@@ -79,5 +79,5 @@ for (var i = 0; i < edittedSongs.length; i++) {
 
 
 //post to page
-
+breakDownString(0);
 
