@@ -32,6 +32,7 @@ console.log("added end" + songs)
 	  	songString = songString.split("*").join("");
 	  	songString = songString.split("@").join("");
 	  	songString = songString.split(")").join("");
+	  	songString = songString.split(",").join(", ");
 	  	console.log("in loop edit" + songString);
 
 	}
@@ -42,3 +43,6 @@ console.log("added end" + songs)
 	console.log(edittedSongs);
 
 //add each string to the DOM in index.html in main content area
+
+document.querySelector(".addingSongs").innerHTML = edittedSongs;
+
