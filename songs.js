@@ -79,5 +79,25 @@ if (i < edittedSongs.length) {
 
 
 //post to page
-breakDownString(0);
+breakDownString(2);
+
+var fillSong = function (i) {
+	breakDownString(i);
+	document.querySelector(".song-player-" + (i+1) + " h1").innerHTML = songName;
+	document.querySelector(".song-player-" + (i+1) + " .player-artist").innerHTML = artist;
+	document.querySelector(".song-player-" + (i+1) + " .player-album").innerHTML = album;
+}
+
+fillSong(0);
+
+var fillPlayer = function () {
+	for (var i = 0; i < edittedSongs.length; i++) {
+		fillSong(i);
+	}
+}
+
+fillPlayer();
+
+//
+
 
