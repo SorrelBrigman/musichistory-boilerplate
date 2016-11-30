@@ -12,7 +12,7 @@ console.log("starting " + songs);
 songs.unshift("Tennessee Whiskey by Chris Stapleton on the album Traveler");
 console.log("added beginning" + songs);
 //and end of the array
-songs.push("Young as the Morning Old as the Sea by Passenger on the album Yound as the Morning Old as the Sea");
+songs.push("Young as the Morning Old as the Sea by Passenger on the album Young as the Morning Old as the Sea");
 console.log("added end" + songs)
 //Loop over the array and remove any words or characters that obviously don't belong
 	//convert to a string
@@ -21,7 +21,7 @@ console.log("added end" + songs)
 	//interate over entire string to remove each character
 
 
-	for (var i = songString.length; i > 0;  i--) {
+	// for (var i = songString.length; i > 0;  i--) {
 		// if (songString[i] === ">" || songString[i] === "*" || songString[i] === "@" || songString[i] === "(") {
 		  //>
 	  // *
@@ -31,11 +31,12 @@ console.log("added end" + songs)
 	  	songString = songString.split(">").join("");
 	  	songString = songString.split("*").join("");
 	  	songString = songString.split("@").join("");
-	  	songString = songString.split(")").join("");
-	  	songString = songString.split(",").join(", ");
+	  	songString = songString.split("(").join("");
+	  	songString = songString.split("!").join("");
+	  	
 	  	console.log("in loop edit" + songString);
 
-	}
+	// }
 	console.log("editted" + songString);
 	//convert back to an array
 
@@ -45,4 +46,38 @@ console.log("added end" + songs)
 //add each string to the DOM in index.html in main content area
 
 document.querySelector(".addingSongs").innerHTML = edittedSongs;
+
+//Create new var
+var songName;
+var album;
+var artist;
+
+//a loop to fill in said array object
+
+var breakDownString = function (i) {
+
+for (var i = 0; i < edittedSongs.length; i++) {
+	//cycle through each part of the stringsongList[i] = new songNumber;
+		//song title
+			//everything before the word "by"
+			songName = edittedSongs[i].split(" by")[0];
+			console.log(songName);
+		//album
+			//everything after the phrase "the album "
+			album  = edittedSongs[i].split("the album ")[1];
+			console.log(album);
+		// for (var j = 0; j < edittedSongs[i].length; j++) {
+		// 	if (edittedSongs[i][j] === )
+		// }
+		// var albumName = edittedSongs[i].
+		//artist
+			//between "by " and " the album "
+			artist = edittedSongs[i].split(" by ")[1].split(" on the album")[0];
+			console.log(artist);
+	}			
+}
+
+
+//post to page
+
 
