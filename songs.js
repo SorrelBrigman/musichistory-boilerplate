@@ -98,6 +98,22 @@ var fillPlayer = function () {
 
 fillPlayer();
 
-//
+//Find way to add to player if there are more songs than current classes
+	//test to see if section 2 (which is the player) contains class .song-player-1
+	if (document.querySelector(".song-player-" + (i+1)) === null) {
+		//if not, add it, along with the default contents
+			var pagePlayer = document.querySelector(".section2");
+			var lastSongPlayer =  document.querySelector(".song-player-" + i);
+			var blankSongPlayertemp = "<div class='song-player-" + (i+1) +"'><h1>Tennessee Whiskey</h1><ul><li class='player-artist'></li><li class='player-album'></li><li class='player-genre>Rock</li></ul></div>"
+			var newSong.outerHTML = blankSongPlayertemp;
+			//insert after last song in player
+			pagePlayer.insertBefore(newSong, lastSongPlayer);
+			//fill newly created contents with info
+			fillPlayer();
+		// if so, fill with info
+	} else {
+		fillPlayer();
+	}
+
 
 
