@@ -33,7 +33,6 @@ console.log("added end" + songs)
 	  	songString = songString.split("@").join("");
 	  	songString = songString.split("(").join("");
 	  	songString = songString.split("!").join("");
-	  	
 	  	console.log("in loop edit" + songString);
 
 	// }
@@ -74,7 +73,7 @@ if (i < edittedSongs.length) {
 			//between "by " and " the album "
 			artist = edittedSongs[i].split(" by ")[1].split(" on the album")[0];
 			console.log(artist);
-	}			
+	}
 }
 
 
@@ -109,8 +108,9 @@ var addSongsToPlayer = function () {
 			//contents to be assigned
 			var blankSongPlayertemp = "<h1>Tennessee Whiskey</h1><ul><li class='player-artist'></li><li class='player-album'></li><li class='player-genre>Rock</li></ul>"
 			//create new div
-			
+			var newSongDiv = document.createElement("div");
 			//assign class
+			newSongDiv.className =  ("song-player-" + (i+1));
 			//
 			.outerHTML = blankSongPlayertemp;
 			//insert after last song in player
