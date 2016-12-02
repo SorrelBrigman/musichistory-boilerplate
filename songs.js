@@ -76,19 +76,12 @@ if (i < edittedSongs.length) {
 
 
 //post to page
-breakDownString(2);
 
-// var fillSong = function (i) {
-// 	breakDownString(i);
-// 	document.querySelector(".song-player-" + (i+1) + " h1").innerHTML = songName;
-// 	document.querySelector(".song-player-" + (i+1) + " .player-artist").innerHTML = artist;
-// 	document.querySelector(".song-player-" + (i+1) + " .player-album").innerHTML = album;
-// }
-//<h1></h1><ul><li class='player-artist'></li><li class='player-album'></li><li class='player-genre>Rock</li></ul>
+
 // create var to hold content
 var updatePlayer;
 //create var to select element on page
-var pagePlayer = document.querySelector(".section2");
+var pagePlayer = document.querySelector(".wrapper");
 var songsToPage = function () {
 	for (var i = 0; i < edittedSongs.length; i++) {
 		breakDownString(i)
@@ -101,42 +94,3 @@ var songsToPage = function () {
 }
 
 songsToPage();
-// fillSong(0);
-
-// var fillPlayer = function () {
-// 	for (var i = 0; i < edittedSongs.length; i++) {
-// 		fillSong(i);
-// 	}
-// }
-
-// fillPlayer();
-
-// //Find way to add to player if there are more songs than current classes
-// var addSongsToPlayer = function () {
-// 		console.log("testing for Caitlin");
-// 	for (var i = 0; i < edittedSongs.length; i++) {
-// 	//test to see if section 2 (which is the player) contains class .song-player-1
-// 		if (document.querySelector(".song-player-" + (i+1)) === null) {
-// 		//if not, add it, along with the default contents
-// 			var pagePlayer = document.querySelector(".section2");
-// 			var lastSongPlayer =  document.querySelector(".song-player-" + i);
-// 			//contents to be assigned
-// 			var blankSongPlayertemp = "<h1></h1><ul><li class='player-artist'></li><li class='player-album'></li><li class='player-genre>Rock</li></ul>"
-// 			//create new div
-// 			var newSongDiv = document.createElement("div");
-// 			//assign class
-// 			newSongDiv.className =  (".song-player-" + (i+1));
-// 			//
-// 			newSongDiv.innerHTML = blankSongPlayertemp;
-// 			//insert after last song in player
-// 			pagePlayer.insertAfter(newSongDiv, lastSongPlayer);
-// 			//fill newly created contents with info
-// 			fillPlayer();
-// 		// if so, fill with info
-// 		} else {
-// 			fillPlayer();
-// 		}
-
-// 	}
-// }
-// addSongsToPlayer();
