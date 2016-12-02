@@ -9,10 +9,10 @@ songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little
 console.log("starting " + songs);
 //add one song to the beginning
 
-songs.unshift("Tennessee Whiskey by Chris Stapleton on the album Traveler");
+songs.unshift("Tennessee Whiskey - by Chris Stapleton on the album Traveler");
 console.log("added beginning" + songs);
 //and end of the array
-songs.push("Young as the Morning Old as the Sea by Passenger on the album Young as the Morning Old as the Sea");
+songs.push("Young as the Morning Old as the Sea - by Passenger on the album Young as the Morning Old as the Sea");
 console.log("added end" + songs)
 //Loop over the array and remove any words or characters that obviously don't belong
 	//convert to a string
@@ -28,7 +28,7 @@ console.log("added end" + songs)
 	  // @
 	  //(
 	  	console.log("I made it to the loop");
-	  	songString = songString.split(">").join("");
+	  	songString = songString.split(">").join("-");
 	  	songString = songString.split("*").join("");
 	  	songString = songString.split("@").join("");
 	  	songString = songString.split("(").join("");
@@ -57,7 +57,7 @@ if (i < edittedSongs.length) {
 	//cycle through each part of the stringsongList[i] = new songNumber;
 		//song title
 			//everything before the word "by"
-			songName = edittedSongs[i].split(" by")[0];
+			songName = edittedSongs[i].split("- by")[0];
 			console.log(songName);
 		//album
 			//everything after the phrase "the album "
@@ -69,7 +69,7 @@ if (i < edittedSongs.length) {
 		// var albumName = edittedSongs[i].
 		//artist
 			//between "by " and " the album "
-			artist = edittedSongs[i].split(" by ")[1].split(" on the album")[0];
+			artist = edittedSongs[i].split("- by ")[1].split(" on the album")[0];
 			console.log(artist);
 	}
 }
@@ -97,6 +97,7 @@ fillPlayer();
 
 //Find way to add to player if there are more songs than current classes
 var addSongsToPlayer = function () {
+		console.log("testing for Caitlin");
 	for (var i = 0; i < edittedSongs.length; i++) {
 	//test to see if section 2 (which is the player) contains class .song-player-1
 		if (document.querySelector(".song-player-" + (i+1)) === null) {
@@ -104,20 +105,20 @@ var addSongsToPlayer = function () {
 			var pagePlayer = document.querySelector(".section2");
 			var lastSongPlayer =  document.querySelector(".song-player-" + i);
 			//contents to be assigned
-			var blankSongPlayertemp = "<h1>Tennessee Whiskey</h1><ul><li class='player-artist'></li><li class='player-album'></li><li class='player-genre>Rock</li></ul>"
+			var blankSongPlayertemp = "<h1></h1><ul><li class='player-artist'></li><li class='player-album'></li><li class='player-genre>Rock</li></ul>"
 			//create new div
 			var newSongDiv = document.createElement("div");
 			//assign class
-			newSongDiv.className =  ("song-player-" + (i+1));
+			newSongDiv.className =  (".song-player-" + (i+1));
 			//
-			newSongDiv.outerHTML = blankSongPlayertemp;
+			newSongDiv.innerHTML = blankSongPlayertemp;
 			//insert after last song in player
-			pagePlayer.insertBefore(newSongDiv, lastSongPlayer);
+			pagePlayer.insertAfter(newSongDiv, lastSongPlayer);
 			//fill newly created contents with info
-			fillSong();
+			fillPlayer();
 		// if so, fill with info
 		} else {
-			fillSong();
+			fillPlayer();
 		}
 
 	}
