@@ -7,7 +7,7 @@ songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album App
 songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
 
 console.log("starting " + songs);
-//add one song to the beginning 
+//add one song to the beginning
 
 songs.unshift("Tennessee Whiskey by Chris Stapleton on the album Traveler");
 console.log("added beginning" + songs);
@@ -26,7 +26,7 @@ console.log("added end" + songs)
 		  //>
 	  // *
 	  // @
-	  //(	
+	  //(
 	  	console.log("I made it to the loop");
 	  	songString = songString.split(">").join("");
 	  	songString = songString.split("*").join("");
@@ -42,9 +42,7 @@ console.log("added end" + songs)
 	var edittedSongs = songString.split(",");
 	console.log(edittedSongs);
 
-//add each string to the DOM in index.html in main content area
 
-document.querySelector(".addingSongs").innerHTML = edittedSongs;
 
 //Create new var
 var songName;
@@ -112,9 +110,9 @@ var addSongsToPlayer = function () {
 			//assign class
 			newSongDiv.className =  ("song-player-" + (i+1));
 			//
-			.outerHTML = blankSongPlayertemp;
+			newSongDiv.outerHTML = blankSongPlayertemp;
 			//insert after last song in player
-			pagePlayer.insertBefore(newSong, lastSongPlayer);
+			pagePlayer.insertBefore(newSongDiv, lastSongPlayer);
 			//fill newly created contents with info
 			fillSong();
 		// if so, fill with info
@@ -123,5 +121,5 @@ var addSongsToPlayer = function () {
 		}
 
 	}
-}	
-
+}
+addSongsToPlayer();
