@@ -12,10 +12,10 @@
     <nav>
     	<ul>
     		<li>
-    		<a href="viewmusic.html">List Music</a>
+    		  <a id="listMusic" href="#">List Music</a>
     		</li>
     		<li>
-    			<a href="addmusic.html">Add Music</a>
+    			<a id="addMusic" href="#">Add Music</a>
     		</li>
     		<li>
     			<a href="#">Profile</a>
@@ -93,21 +93,21 @@
       <div class="wrapper">
 	  </div>
   </section>
-  <div>
-    <div class="addmusic">
+  <div class="addmusic">
+    <div>
         <label>Song name:</label>
-        <input type="text" name="songName">
-        </div>
-        <div>
+        <input id="songName" type="text" name="songName">
+    </div>
+    <div>
         <label>Artist:</label>
-        <input type="text" name="artistName">
-        </div>
+        <input id="artistName" type="text" name="artistName">
+    </div>
         <div>
         <label>Album:</label>
-        <input type="text" name="albumName">
-        </div>
-        <input type="submit" value="Add">
-      </div>
+        <input id="albumName" type="text" name="albumName">
+    </div>
+        <input id="submitButton" type="submit" value="Add">
+    </div>
   </div>
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="songs.js"></script>
