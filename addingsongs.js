@@ -39,3 +39,13 @@ function addMusicToPlayer() {
   $(".section2").show();
 
 }
+
+//when user clicks on list music, add music should be hiddern
+
+$("#listMusic").click(showList);
+
+function showList() {
+  $(".addmusic").hide();
+  $(".section1").show();
+  $(".section2").show();
+}
