@@ -36,6 +36,7 @@ function addMusicToPlayer() {
   songHTML += `<h1>${song}</h1>`;
   songHTML += `<ul><li class="player-artist">${artist}</li>`
   songHTML += `<li class="player-album">${album}</li>`
+  songHTML += `<li><button class="delete-button">DELETE</button></li>`
   songHTML += `</ul></div>`;
   $(".section2 .wrapper").append(songHTML);
   //hides add music
@@ -43,6 +44,8 @@ function addMusicToPlayer() {
   //shows list
   $(".section1").show();
   $(".section2").show();
+  //add event listener on delete button
+  $(".delete-button").click(deleteSong);
 
 }
 
@@ -130,4 +133,6 @@ function createMoreSongs(songList2) {
 
 $("#moreMusic").click(function(){
   $(".section2 .wrapper").append(moreSongsHTML);
+  //add event listener on delete button
+  $(".delete-button").click(deleteSong);
 })
