@@ -49,3 +49,36 @@ function showList() {
   $(".section1").show();
   $(".section2").show();
 }
+
+//load JSON song file
+
+var promise1 = new Promise (function(resolve, reject){
+  $.ajax({
+    url : "songs.json"
+  })
+  .done(function(data, t, x){
+    resolve(data);
+  })
+});
+
+
+promise1.then(function(data) {
+  var songList1 = data;
+  fillSongs(songList1);
+});
+
+//fill the  song list with JSON file
+
+function fillSongs(songList1) {
+  var songs = songList1;
+  var songsHTML = "";
+  for(var i = 0; i < songs.songs.length; i++) {
+    songsHTML += `<div class="song-player">`;
+    songsHTML += `<h1>${songs.songs[i].title}</h1>`;
+    songsHTML += `<ul><li class="player-artist">${songs.songs[i].artist}</li>`
+    songsHTML += `<li class="player-album">${songs.songs[i].album}</li>`
+    songsHTML += `</ul></div>`;
+  }
+  //Put in div
+  $(".section2 .wrapper").html(songsHTML);
+}
