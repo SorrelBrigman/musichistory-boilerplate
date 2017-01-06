@@ -1,3 +1,5 @@
+
+
 //On load hide the add music player
 
 $(".addmusic").hide();
@@ -12,6 +14,10 @@ function showAddMusic() {
     //show's add music thing
   $(".addmusic").show();
 }
+
+//Global variable
+  var moreSongsHTML = "";
+
 
 
 
@@ -90,3 +96,38 @@ function fillSongs(songList1) {
 function deleteSong(e) {
   $(e.target).parentsUntil(".wrapper").remove();
 }
+
+//promise to pull in second JSON file
+
+var promise2 = new Promise (function(resolve, reject){
+  $.ajax({
+    url : "moresongs.json"
+  })
+  .done(function(data, t, x){
+    resolve(data);
+  })
+});
+
+promise2.then(function(data) {
+  var songList2 = data;
+  createMoreSongs(songList2);
+});
+
+function createMoreSongs(songList2) {
+  var songs = songList2;
+
+  for(var i = 0; i < songs.songs.length; i++) {
+    moreSongsHTML += `<div class="song-player">`;
+    moreSongsHTML += `<h1>${songs.songs[i].title}</h1>`;
+    moreSongsHTML += `<ul><li class="player-artist">${songs.songs[i].artist}</li>`
+    moreSongsHTML += `<li class="player-album">${songs.songs[i].album}</li>`
+    moreSongsHTML += `<li><button class="delete-button">DELETE</button></li>`
+    moreSongsHTML += `</ul></div>`;
+  }
+}
+
+//on clicking the more button, add the second songs json
+
+$("#moreMusic").click(function(){
+  $(".section2 .wrapper").append(moreSongsHTML);
+})
