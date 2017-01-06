@@ -77,8 +77,16 @@ function fillSongs(songList1) {
     songsHTML += `<h1>${songs.songs[i].title}</h1>`;
     songsHTML += `<ul><li class="player-artist">${songs.songs[i].artist}</li>`
     songsHTML += `<li class="player-album">${songs.songs[i].album}</li>`
+    songsHTML += `<li><button class="delete-button">DELETE</button></li>`
     songsHTML += `</ul></div>`;
   }
   //Put in div
   $(".section2 .wrapper").html(songsHTML);
+  //add event listener on delete button
+  $(".delete-button").click(deleteSong);
+}
+
+//function that deletes song
+function deleteSong(e) {
+  $(e.target).parentsUntil(".wrapper").remove();
 }
