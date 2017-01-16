@@ -46,7 +46,8 @@ function addMusicToPlayer() {
   $(".section2").show();
   //add event listener on delete button
   $(".delete-button").click(deleteSong);
-
+  //adds to JSON file
+  writeSongsToJSON(song, artist, album);
 }
 
 //when user clicks on list music, add music should be hiddern
@@ -63,7 +64,7 @@ function showList() {
 
 var promise1 = new Promise (function(resolve, reject){
   $.ajax({
-    url : "songs.json"
+    url : "https://musichistoryskb.firebaseio.com/.json"
   })
   .done(function(data, t, x){
     resolve(data);
@@ -100,39 +101,61 @@ function deleteSong(e) {
   $(e.target).parentsUntil(".wrapper").remove();
 }
 
-//promise to pull in second JSON file
+//write songs to JSON file
 
-var promise2 = new Promise (function(resolve, reject){
+function writeSongsToJSON(title, artist, album) {
+  var songToAdd = {};
+  songToAdd.title = title;
+  songToAdd.artist = artist;
+  songToAdd.album = album;
   $.ajax({
-    url : "moresongs.json"
+    url : "https://musichistoryskb.firebaseio.com/songs.json",
+    method : "POST",
+    data : JSON.stringify(songToAdd)
   })
-  .done(function(data, t, x){
-    resolve(data);
+  .then()
+  .catch(function(e){
+    alert(e)
   })
-});
-
-promise2.then(function(data) {
-  var songList2 = data;
-  createMoreSongs(songList2);
-});
-
-function createMoreSongs(songList2) {
-  var songs = songList2;
-
-  for(var i = 0; i < songs.songs.length; i++) {
-    moreSongsHTML += `<div class="song-player">`;
-    moreSongsHTML += `<h1>${songs.songs[i].title}</h1>`;
-    moreSongsHTML += `<ul><li class="player-artist">${songs.songs[i].artist}</li>`
-    moreSongsHTML += `<li class="player-album">${songs.songs[i].album}</li>`
-    moreSongsHTML += `<li><button class="delete-button">DELETE</button></li>`
-    moreSongsHTML += `</ul></div>`;
-  }
 }
 
-//on clicking the more button, add the second songs json
 
-$("#moreMusic").click(function(){
-  $(".section2 .wrapper").append(moreSongsHTML);
-  //add event listener on delete button
-  $(".delete-button").click(deleteSong);
-})
+
+
+
+// //promise to pull in second JSON file
+
+// var promise2 = new Promise (function(resolve, reject){
+//   $.ajax({
+//     url : "moresongs.json"
+//   })
+//   .done(function(data, t, x){
+//     resolve(data);
+//   })
+// });
+
+// promise2.then(function(data) {
+//   var songList2 = data;
+//   createMoreSongs(songList2);
+// });
+
+// function createMoreSongs(songList2) {
+//   var songs = songList2;
+
+//   for(var i = 0; i < songs.songs.length; i++) {
+//     moreSongsHTML += `<div class="song-player">`;
+//     moreSongsHTML += `<h1>${songs.songs[i].title}</h1>`;
+//     moreSongsHTML += `<ul><li class="player-artist">${songs.songs[i].artist}</li>`
+//     moreSongsHTML += `<li class="player-album">${songs.songs[i].album}</li>`
+//     moreSongsHTML += `<li><button class="delete-button">DELETE</button></li>`
+//     moreSongsHTML += `</ul></div>`;
+//   }
+// }
+
+// //on clicking the more button, add the second songs json
+
+// $("#moreMusic").click(function(){
+//   $(".section2 .wrapper").append(moreSongsHTML);
+//   //add event listener on delete button
+//   $(".delete-button").click(deleteSong);
+// })

@@ -1,0 +1,54 @@
+{
+    "songs": [
+        {
+            "title": "Tennessee Whiskey",
+            "artist": "Chris Stapleton",
+            "album": "Traveler"
+        },
+        {
+            "title": "Legs",
+            "artist": "ZZ Top",
+            "album": "Eliminator"
+        },
+        {
+            "title": "The Logical Song",
+            "artist": "SuperTramp",
+            "album": "Breakfast in America"
+        },
+        {
+            "title": "Welcome to the Jungle",
+            "artist": "Guns & Roses",
+            "album": "Appetite for Destruction"
+        },
+        {
+            "title": "Ironic",
+            "artist": "Alanis Morisette",
+            "album": "Jagged Little Pill"
+        },
+        {
+            "title": "Young as the Morning, Old as the Sea",
+            "artist": "Passenger",
+            "album": "Young as the Morning, Old as the Sea"
+        },
+        {
+            "title": "Do it Anyway",
+            "artist": "Ben Folds Five",
+            "album": "Sound of the Life of the Mind"
+        },
+        {
+            "title": "24",
+            "artist": "Switchfoot",
+            "album": "The Beautiful Leftdown"
+        },
+        {
+            "title": "Lick My Love Pump",
+            "artist": "Spinal Tap",
+            "album": "Smell the Glove"
+        },
+        {
+            "title": "Title 1",
+            "artist": "artist 1",
+            "album": "album1"
+        }
+    ]
+}
