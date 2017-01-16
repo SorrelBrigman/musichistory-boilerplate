@@ -82,14 +82,16 @@ promise1.then(function(data) {
 function fillSongs(songList1) {
   var songs = songList1;
   var songsHTML = "";
-  for(var i = 0; i < songs.songs.length; i++) {
-    songsHTML += `<div class="song-player">`;
-    songsHTML += `<h1>${songs.songs[i].title}</h1>`;
-    songsHTML += `<ul><li class="player-artist">${songs.songs[i].artist}</li>`
-    songsHTML += `<li class="player-album">${songs.songs[i].album}</li>`
-    songsHTML += `<li><button class="delete-button">DELETE</button></li>`
-    songsHTML += `</ul></div>`;
-  }
+//interate through all the songs
+     for (var key in songs.songs) {
+      songsHTML += `<div class="song-player" data-songsID=${key}>`;
+      songsHTML += `<h1>${songs.songs[key].title}</h1>`;
+      songsHTML += `<ul><li class="player-artist">${songs.songs[key].artist}</li>`
+      songsHTML += `<li class="player-album">${songs.songs[key].album}</li>`
+      songsHTML += `<li><button class="delete-button">DELETE</button></li>`
+      songsHTML += `</ul></div>`;
+    }
+
   //Put in div
   $(".section2 .wrapper").html(songsHTML);
   //add event listener on delete button
