@@ -115,7 +115,9 @@ function writeSongsToJSON(title, artist, album) {
     method : "POST",
     data : JSON.stringify(songToAdd)
   })
-  .then()
+  .then((e)=>{
+    console.log(e)
+  })
   .catch(function(e){
     alert(e)
   })
