@@ -1,0 +1,60 @@
+<div class="listMusic">
+  <section class="section1" >
+    <form>
+      <label>Song length:</label>
+      <input type="range">
+        <label>Artist:</label>
+      <select class="artistChoice" name="artistChoice">
+        <option value="default">Options</option>
+        <option value=music.artist>{{music.artist}}</option>
+      </select>
+        <label>Album:</label>
+      <select name="albumChoice">
+        <option value="default">Options</option>
+        <option value=music.album>{{music.album}}}</option>
+      </select>
+      <div class="genre">
+        <label>Genre</label>
+        <div class="gencol">
+        <div class="genrow">
+          <div>
+              <input type="checkbox" name="genre" value="rock">Rock
+          </div>
+          <div>
+            <input type="checkbox" name="genre" value="classical">Classical
+          </div>
+          <div>
+              <input type="checkbox" name="genre" value="pop">Pop
+          </div>
+        </div>
+        <div class="genrow">
+          <div>
+            <input type="checkbox" name="genre" value="jazz">Jazz
+          </div>
+          <div>
+            <input type="checkbox" name="genre" value="blues">Blues
+          </div>
+          <div>
+            <input type="checkbox" name="genre" value="hipHop">Hip Hop
+          </div>
+        </div>
+        </div>
+      </div>
+      <input type="submit" value="Filter">
+    </form>
+  </section>
+
+    <section class="section2">
+      <div class="wrapper" ng-repeat="song in songs">
+          <div class="song-player-">
+            <h1>{{song.title}}</h1>
+              <ul>
+                <li class="player-artist">{{song.artist}}</li>
+                <li class="player-album">{{song.album}}</li>
+                <li><button class="delete-button">DELETE</button></li>
+              </ul>
+          </div>
+    </div>
+      <button id="moreMusic">More</button>
+  </section>
+</div>
