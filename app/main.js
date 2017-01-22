@@ -48,7 +48,7 @@ const app =
         songToAdd.title = title;
         songToAdd.artist = artist;
         songToAdd.album = album;
-        }
+
         return $http
         .post("https://musichistoryskb.firebaseio.com/songs.json", songToAdd)
         .then(()=>{
