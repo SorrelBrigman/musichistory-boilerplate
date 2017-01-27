@@ -30,7 +30,7 @@ const app =
       console.log("song to delete", song)
       deleteSongFactory.deleteSong(song)
       .then((e)=>{
-        console.log("$scope.song", $scope.songs)
+        //removes the deleted song from the array of ng-repeat items
         $scope.songs.splice(index, 1)
       })
     }
@@ -46,9 +46,10 @@ const app =
   })//end of controller
   .controller('AddMusicCtr', function(writingsongFactory, $scope) {
     $scope.writeSong = () => {
+      //takes the user supplied info from the text inputs and
+      //send to the writing song factory
       writingsongFactory.writeSongs($scope.songName, $scope.artistName, $scope.albumName)
-      .then((e)=>{
-       console.log("wrote song", e)
+      .then(()=>{
        //reset add music form to empty
        $scope.songName = ""
        $scope.artistName = ""
@@ -59,18 +60,19 @@ const app =
   .factory('songFactory', ($http)=>{
     return {
       getSongs : ()=> {
+        //gets songs from the firebase file
         return $http
         .get("https://musichistoryskb.firebaseio.com/songs.json")
         .then((response)=>{
+          //returns the data from firebase, slightly parsed
           return response.data
-          console.log(response.data)
         }) //end of then
       } //end of function
 
     }//end of object
   })//end of factory
   .factory('writingsongFactory', ($http)=>{
-    return{
+    return {
       writeSongs : (title, artist, album)=>{
         let songToAdd = {};
         songToAdd.title = title;
@@ -93,7 +95,7 @@ const app =
           //create new array of songs
           let songs = []
           for(var key in val){
-            //create an array of song objects
+            //create an array of song objects from the firebase data
             let currentSong = {
               album : val[key].album,
               artist : val[key].artist,
@@ -102,7 +104,7 @@ const app =
             } //end of currentSong Object
             songs.push(currentSong)
           }
-          console.log("songs", val)
+          //returns the array of songs with the key as an accessible value
           return songs
         })//end of then
       }//end of songArray()
