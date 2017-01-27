@@ -15,6 +15,9 @@ const app =
       controller : "DetailCtrl",
       templateUrl : "partials/song-details.html"
     })
+    .otherwise({
+      redirectTo: '/'
+    })
   }) //end of config
   .controller('ListCtr', function($scope, songFactory){
     songFactory
@@ -22,6 +25,10 @@ const app =
     .then((response)=>{
       $scope.songs = response
     })//end of then
+
+    $scope.delete = (song) => {
+
+    }
 
   })//end of controller
   .controller('DetailCtrl', function($scope, songArrayFactory){
@@ -32,13 +39,13 @@ const app =
     })//end of then
 
   })//end of controller
-  .controller('AddMusicCtr', function(writingsongFactory) {
-    writingsongFactory
-    .writeSongs()
-    .then(()=>{
-
+  .controller('AddMusicCtr', function(writingsongFactory, $scope) {
+    $scope.writeSong = () => {
+      writingsongFactory.writeSongs($scope.songName, $scope.artistName, $scope.albumName)
+      .then((e)=>{
+       console.log("wrote song", e)
     })
-
+    }
   })//end of controller
   .factory('songFactory', ($http)=>{
     return {
@@ -74,9 +81,10 @@ const app =
       songArray: () => {
         return songFactory.getSongs()
         .then((val)=>{
-
+          //create new array of songs
           let songs = []
           for(var key in val){
+            //create an array of song objects
             let currentSong = {
               album : val[key].album,
               artist : val[key].artist,

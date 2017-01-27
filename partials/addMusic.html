@@ -2,17 +2,17 @@
     <form>
         <div>
         <label>Song name:</label>
-        <input type="text" name="songName">
+        <input type="text" name="songName" ng-model="songName">
         </div>
         <div>
         <label>Artist:</label>
-        <input type="text" name="artistName">
+        <input type="text" name="artistName" ng-model="artistName">
         </div>
         <div>
         <label>Album:</label>
-        <input type="text" name="albumName">
+        <input type="text" name="albumName" ng-model="albumName">
         </div>
-        <input type="submit" value="Add">
+        <button ng-click="writeSong()">Add</button>
     </form>
 
 </section>

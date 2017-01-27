@@ -6,7 +6,8 @@
 
 
 <div>
-  <div class="wrapper" ng-repeat="song in songs | filter: searchText">
+  <section class="section2">
+    <div class="wrapper" ng-repeat="song in songs | filter: searchText">
           <div class="song-player-">
             <h1>{{song.title}}</h1>
               <ul>
@@ -16,4 +17,5 @@
               </ul>
           </div>
     </div>
+  </section>
 </div>
