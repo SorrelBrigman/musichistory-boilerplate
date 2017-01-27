@@ -6,12 +6,12 @@
         <label>Artist:</label>
       <select class="artistChoice" name="artistChoice">
         <option value="default">Options</option>
-        <option value=music.artist>{{music.artist}}</option>
+        <option value=music.artist ng-repeat="song in songs">{{song.artist}}</option>
       </select>
         <label>Album:</label>
       <select name="albumChoice">
         <option value="default">Options</option>
-        <option value=music.album>{{music.album}}}</option>
+        <option value=music.album ng-repeat="song in songs">{{song.album}}</option>
       </select>
       <div class="genre">
         <label>Genre</label>
