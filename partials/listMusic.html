@@ -5,11 +5,12 @@
       <input type="range"> -->
         <label>Artist:</label>
       <select class="artistChoice"  name="artistChoice" ng-model="artistFilter">
-        <!-- <option value="default">Options</option> -->
+        <option value="" selected="selected">Filter By Artist</option>
         <option value={{song.artist}}  ng-repeat="song in songs">{{song.artist}}</option>
       </select>
         <label>Album:</label>
       <select name="albumChoice" ng-model="albumFilter">
+        <option value="" selected="selected">Filter By Album</option>
         <option value={{song.album}}  ng-repeat="song in songs">{{song.album}}</option>
       </select>
       <!-- <div class="genre">
