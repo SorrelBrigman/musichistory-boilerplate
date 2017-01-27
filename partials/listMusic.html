@@ -4,14 +4,14 @@
       <label>Song length:</label>
       <input type="range">
         <label>Artist:</label>
-      <select class="artistChoice" name="artistChoice">
-        <option value="default">Options</option>
-        <option value=music.artist ng-repeat="song in songs">{{song.artist}}</option>
+      <select class="artistChoice" ng-click=logme() name="artistChoice" ng-model="artistFilter">
+        <!-- <option value="default">Options</option> -->
+        <option value={{song.artist}}  ng-repeat="song in songs">{{song.artist}}</option>
       </select>
         <label>Album:</label>
       <select name="albumChoice">
         <option value="default">Options</option>
-        <option value=music.album ng-repeat="song in songs">{{song.album}}</option>
+        <option value=music.album ng-model="albumFilter" ng-repeat="song in songs">{{song.album}}</option>
       </select>
       <div class="genre">
         <label>Genre</label>
@@ -45,7 +45,7 @@
   </section>
 
     <section class="section2">
-      <div class="wrapper" ng-repeat="song in songs">
+      <div class="wrapper" ng-repeat="song in songs | filter: artistFilter">
           <div class="song-player-">
             <h1>{{song.title}}</h1>
               <ul>

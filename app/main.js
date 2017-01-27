@@ -26,6 +26,10 @@ const app =
       $scope.songs = response
     })//end of then
 
+    $scope.logme = ()=>{
+      console.log($scope.artistFilter)
+    }
+
     $scope.delete = (song, index) => {
       console.log("song to delete", song)
       deleteSongFactory.deleteSong(song)
