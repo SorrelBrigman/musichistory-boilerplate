@@ -19,15 +19,19 @@ const app =
       redirectTo: '/'
     })
   }) //end of config
-  .controller('ListCtr', function($scope, songFactory){
-    songFactory
-    .getSongs()
+  .controller('ListCtr', function($scope, songArrayFactory, deleteSongFactory){
+    songArrayFactory
+    .songArray()
     .then((response)=>{
       $scope.songs = response
     })//end of then
 
     $scope.delete = (song) => {
-
+      console.log("song to delete", song)
+      deleteSongFactory.deleteSong(song)
+      .then((e)=>{
+        console.log("from delete", e)
+      })
     }
 
   })//end of controller
@@ -44,6 +48,10 @@ const app =
       writingsongFactory.writeSongs($scope.songName, $scope.artistName, $scope.albumName)
       .then((e)=>{
        console.log("wrote song", e)
+       //reset add music form to empty
+       $scope.songName = ""
+       $scope.artistName = ""
+       $scope.albumName = ""
     })
     }
   })//end of controller
@@ -89,6 +97,7 @@ const app =
               album : val[key].album,
               artist : val[key].artist,
               title : val[key].title,
+              key : key
             } //end of currentSong Object
             songs.push(currentSong)
           }
@@ -97,4 +106,17 @@ const app =
         })//end of then
       }//end of songArray()
     }//end of factory object
+  })
+  .factory("deleteSongFactory", ($http)=>{
+    return {
+      deleteSong : (song) => {
+        let thisSong = song.key
+        console.log("songkey", thisSong)
+        return $http
+        .delete(`https://musichistoryskb.firebaseio.com/songs/${thisSong}/.json`)
+        .then((e)=>{
+          return  e
+        })
+      }
+    }
   })
