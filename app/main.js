@@ -11,10 +11,22 @@ const app =
       controller : "AddMusicCtr",
       templateUrl : "partials/addMusic.html"
     })
+    .when('/details', {
+      controller : "DetailCtrl",
+      templateUrl : "partials/song-details.html"
+    })
   }) //end of config
   .controller('ListCtr', function($scope, songFactory){
     songFactory
     .getSongs()
+    .then((response)=>{
+      $scope.songs = response
+    })//end of then
+
+  })//end of controller
+  .controller('DetailCtrl', function($scope, songArrayFactory){
+    songArrayFactory
+    .songArray()
     .then((response)=>{
       $scope.songs = response
     })//end of then
@@ -56,4 +68,25 @@ const app =
         })
       }
     }
+  })
+  .factory("songArrayFactory", (songFactory)=>{
+    return{
+      songArray: () => {
+        return songFactory.getSongs()
+        .then((val)=>{
+
+          let songs = []
+          for(var key in val){
+            let currentSong = {
+              album : val[key].album,
+              artist : val[key].artist,
+              title : val[key].title,
+            } //end of currentSong Object
+            songs.push(currentSong)
+          }
+          console.log("songs", val)
+          return songs
+        })//end of then
+      }//end of songArray()
+    }//end of factory object
   })

@@ -1,0 +1,19 @@
+<h1>Song Detail</h1>
+
+<label>Search Songs</label>
+<input type="text" ng-model="searchText">
+
+
+
+<div>
+  <div class="wrapper" ng-repeat="song in songs | filter: searchText">
+          <div class="song-player-">
+            <h1>{{song.title}}</h1>
+              <ul>
+                <li class="player-artist">{{song.artist}}</li>
+                <li class="player-album">{{song.album}}</li>
+
+              </ul>
+          </div>
+    </div>
+</div>
