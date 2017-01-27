@@ -26,11 +26,12 @@ const app =
       $scope.songs = response
     })//end of then
 
-    $scope.delete = (song) => {
+    $scope.delete = (song, index) => {
       console.log("song to delete", song)
       deleteSongFactory.deleteSong(song)
       .then((e)=>{
-        console.log("from delete", e)
+        console.log("$scope.song", $scope.songs)
+        $scope.songs.splice(index, 1)
       })
     }
 
@@ -52,8 +53,8 @@ const app =
        $scope.songName = ""
        $scope.artistName = ""
        $scope.albumName = ""
-    })
-    }
+      })//end of then
+    }//end of writeSong()
   })//end of controller
   .factory('songFactory', ($http)=>{
     return {
