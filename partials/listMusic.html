@@ -1,8 +1,8 @@
 <div class="listMusic">
   <section class="section1" >
     <form>
-      <label>Song length:</label>
-      <input type="range">
+      <!-- <label>Song length:</label>
+      <input type="range"> -->
         <label>Artist:</label>
       <select class="artistChoice"  name="artistChoice" ng-model="artistFilter">
         <!-- <option value="default">Options</option> -->
@@ -12,7 +12,7 @@
       <select name="albumChoice" ng-model="albumFilter">
         <option value={{song.album}}  ng-repeat="song in songs">{{song.album}}</option>
       </select>
-      <div class="genre">
+      <!-- <div class="genre">
         <label>Genre</label>
         <div class="gencol">
         <div class="genrow">
@@ -38,8 +38,8 @@
           </div>
         </div>
         </div>
-      </div>
-      <input type="submit" value="Filter">
+      </div> -->
+      <input type="submit" ng-click=clearFilters() value="Clear Filter">
     </form>
   </section>
 

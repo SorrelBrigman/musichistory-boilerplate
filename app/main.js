@@ -19,15 +19,16 @@ const app =
       redirectTo: '/'
     })
   }) //end of config
-  .controller('ListCtr', function($scope, songArrayFactory, deleteSongFactory){
+  .controller('ListCtr', function($scope, songArrayFactory, deleteSongFactory, $location){
     songArrayFactory
     .songArray()
     .then((response)=>{
       $scope.songs = response
     })//end of then
 
-    $scope.logme = ()=>{
-      console.log($scope.artistFilter)
+    $scope.clearFilters = ()=>{
+      $scope.artistFilter = ""
+      $scope.albumFilter = ""
     }
 
     $scope.delete = (song, index) => {
