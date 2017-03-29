@@ -1,0 +1,29 @@
+{
+    "songs": [
+        {
+            "title": "Tennessee Whiskey",
+            "artist": "Chris Stapleton",
+            "album": "Traveler"
+        },
+        {
+            "title": "Legs",
+            "artist": "ZZ Top",
+            "album": "Eliminator"
+        },
+        {
+            "title": "The Logical Song",
+            "artist": "SuperTramp",
+            "album": "Breakfast in America"
+        },
+        {
+            "title": "Welcome to the Jungle",
+            "artist": "Guns & Roses",
+            "album": "Appetite for Destruction"
+        },
+        {
+            "title": "Ironic",
+            "artist": "Alanis Morisette",
+            "album": "Jagged Little Pill"
+        }
+    ]
+}

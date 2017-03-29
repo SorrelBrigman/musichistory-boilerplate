@@ -8,91 +8,35 @@
 </head>
 
 <body>
+
+
   <header>
     <nav>
     	<ul>
     		<li>
-    		<a href="viewmusic.html">View Music</a>
+    		  <a id="listMusic" href="#!/details">List Music Details</a>
     		</li>
     		<li>
-    			<a href="addmusic.html">Add Music</a>
+    			<a id="addMusic" href="#!/addMusic">Add Music</a>
     		</li>
     		<li>
-    			<a href="#">Profile</a>
+    			<a href="#!/">Profile</a>
     		</li>
     	</ul>
     </nav>
   </header>
-  <section class="section1">
-    <form>
-    	<label>Song length:</label>
-    	<input type="range">
-        <label>Artist:</label>
-    	<select class="artistChoice" name="artistChoice">
-    	  <option value="default">Options</option>
-    	  <option value="passenger">Passenger</option>
-    	  <option value="chrisStapleton">Chris Stapleton</option>
-    	  <option value="adele">Adele</option>
-    	  <option value="jonForeman">Jon Foreman</option>
-    	  <option value="switchfoot">Switchfoot</option>
-    	</select>
-        <label>Album:</label>
-    	<select name="albumChoice">
-    	  <option value="default">Options</option>
-    	  <option value="passYoungas">Young as the Morning Old as the Sea</option>
-    	  <option value="passWhispers">Whispers</option>
-    	  <option value="passAllTheLittle">All The Little Lights</option>
-    	  <option value="passFlightOf">Flight of the Crow</option>
-    	  <option value="chrisStpTravler">Traveler</option>
-    	  <option value="adele25">25</option>
-    	  <option value="adele21">21</option>
-    	  <option value="adele19">19</option>
-    	  <option value="jonForWonderlands">The Wonderlands</option>
-    	  <option value="jonForLimbsAnd">Limbs and Branches</option>
-    	  <option value="switchfWhere">Where the Light Shines Through</option>
-    	  <option value="switchfFading">Fading West</option>
-    	  <option value="switchfVice">Vice Verses</option>
-    	  <option value="switchfOh">Oh! Gravity</option>
-    	  <option value="switchfNothing">Nothing is Sound</option>
-    	  <option value="switchfTheBeautiful">The Beautiful Letdown</option>
-    	  <option value="switchfLearning">Learning to Breathe</option>
-    	  <option value="switchfNew">New Way To Be Human</option>
-    	  <option value="switchLegend">The Legend of Chin</option>
-    	</select>
-    	<div class="genre">
-	    	<label>Genre</label>
-	    	<div class="gencol">
-	    	<div class="genrow">
-	    		<div>
-		    	  	<input type="checkbox" name="genre" value="rock">Rock
-		    	</div>
-		    	<div>
-		    		<input type="checkbox" name="genre" value="classical">Classical
-		    	</div>
-		    	<div>
-		    	    <input type="checkbox" name="genre" value="pop">Pop
-		    	</div>
-		    </div>
-		    <div class="genrow">
-		    	<div>
-		    		<input type="checkbox" name="genre" value="jazz">Jazz
-		    	</div>
-		    	<div>
-		    		<input type="checkbox" name="genre" value="blues">Blues
-		    	</div>
-		    	<div>
-		    		<input type="checkbox" name="genre" value="hipHop">Hip Hop
-		    	</div>
-	    	</div>
-	    	</div>
-	    </div>
-	    <input type="submit" value="Filter">
-    </form>
-  </section>
-    <section class="section2">
-      <div class="wrapper">
-	  </div>
-  </section>
-  <script type="text/javascript" src="songs.js"></script>
+
+    <div ng-app="musicHistoryApp">
+
+        <div ng-view></div>
+    </div>
+
+
+  <script src="bower_components/jQuery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="app/main.js"></script>
+
 </body>
 </html>

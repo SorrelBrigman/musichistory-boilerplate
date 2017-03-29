@@ -1,0 +1,60 @@
+<div class="listMusic">
+  <section class="section1" >
+    <form>
+      <!-- <label>Song length:</label>
+      <input type="range"> -->
+        <label>Artist:</label>
+      <select class="artistChoice"  name="artistChoice" ng-model="artistFilter">
+        <option value="" selected="selected">Filter By Artist</option>
+        <option value={{song.artist}}  ng-repeat="song in songs">{{song.artist}}</option>
+      </select>
+        <label>Album:</label>
+      <select name="albumChoice" ng-model="albumFilter">
+        <option value="" selected="selected">Filter By Album</option>
+        <option value={{song.album}}  ng-repeat="song in songs">{{song.album}}</option>
+      </select>
+      <!-- <div class="genre">
+        <label>Genre</label>
+        <div class="gencol">
+        <div class="genrow">
+          <div>
+              <input type="checkbox" name="genre" value="rock">Rock
+          </div>
+          <div>
+            <input type="checkbox" name="genre" value="classical">Classical
+          </div>
+          <div>
+              <input type="checkbox" name="genre" value="pop">Pop
+          </div>
+        </div>
+        <div class="genrow">
+          <div>
+            <input type="checkbox" name="genre" value="jazz">Jazz
+          </div>
+          <div>
+            <input type="checkbox" name="genre" value="blues">Blues
+          </div>
+          <div>
+            <input type="checkbox" name="genre" value="hipHop">Hip Hop
+          </div>
+        </div>
+        </div>
+      </div> -->
+      <input type="submit" ng-click=clearFilters() value="Clear Filter">
+    </form>
+  </section>
+
+    <section class="section2">
+      <div class="wrapper" ng-repeat="song in songs | filter: albumFilter | filter: artistFilter">
+          <div class="song-player-">
+            <h1>{{song.title}}</h1>
+              <ul>
+                <li class="player-artist">{{song.artist}}</li>
+                <li class="player-album">{{song.album}}</li>
+                <li><button class="delete-button"  ng-click=delete(song,$index)>DELETE</button></li>
+              </ul>
+          </div>
+    </div>
+      <button id="moreMusic">More</button>
+  </section>
+</div>

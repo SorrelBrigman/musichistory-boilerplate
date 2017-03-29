@@ -6,18 +6,18 @@ songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album Th
 songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
 songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
 
-console.log("starting " + songs);
+
 //add one song to the beginning
 
 songs.unshift("Tennessee Whiskey - by Chris Stapleton on the album Traveler");
-console.log("added beginning" + songs);
+
 //and end of the array
 songs.push("Young as the Morning Old as the Sea - by Passenger on the album Young as the Morning Old as the Sea");
-console.log("added end" + songs)
+
 //Loop over the array and remove any words or characters that obviously don't belong
 	//convert to a string
 	var songString = songs.join();
-	console.log(songString);
+
 	//interate over entire string to remove each character
 
 
@@ -27,7 +27,7 @@ console.log("added end" + songs)
 	  // *
 	  // @
 	  //(
-	  	console.log("I made it to the loop");
+
 	  	songString = songString.split(">").join("-");
 	  	songString = songString.split("*").join("");
 	  	songString = songString.split("@").join("");
@@ -58,11 +58,11 @@ if (i < edittedSongs.length) {
 		//song title
 			//everything before the word "by"
 			songName = edittedSongs[i].split("- by")[0];
-			console.log(songName);
+
 		//album
 			//everything after the phrase "the album "
 			album  = edittedSongs[i].split("the album ")[1];
-			console.log(album);
+
 		// for (var j = 0; j < edittedSongs[i].length; j++) {
 		// 	if (edittedSongs[i][j] === )
 		// }
@@ -70,7 +70,7 @@ if (i < edittedSongs.length) {
 		//artist
 			//between "by " and " the album "
 			artist = edittedSongs[i].split("- by ")[1].split(" on the album")[0];
-			console.log(artist);
+
 	}
 }
 
@@ -81,7 +81,7 @@ if (i < edittedSongs.length) {
 // create var to hold content
 var updatePlayer;
 //create var to select element on page
-var pagePlayer = document.querySelector(".wrapper");
+
 var songsToPage = function () {
 	for (var i = 0; i < edittedSongs.length; i++) {
 		breakDownString(i)
@@ -89,7 +89,7 @@ var songsToPage = function () {
 		updatePlayer = updatePlayer + "</h1><ul><li class='player-artist'>" + artist;
 		updatePlayer = updatePlayer + "</li><li class='player-album'>" + album;
 		updatePlayer = updatePlayer + "</li><li class='player-genre>Rock</li></ul></div>";
-		pagePlayer.innerHTML = pagePlayer.innerHTML + updatePlayer;
+		$(".wrapper").append(updatePlayer);
 	}
 }
 
